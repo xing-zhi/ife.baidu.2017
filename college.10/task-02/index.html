@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 02</title>
+  </head>
+<body>
+
+  <h3>污染城市列表</h3>
+  <ul id="aqi-list">
+<!--
+    <li>第一名：福州（样例），10</li>
+      <li>第二名：福州（样例），10</li> -->
+  </ul>
+
+<script type="text/javascript">
+
+  const aqiData = [
+    { city: '北京', aqi: 90 },
+    { city: '上海', aqi: 50 },
+    { city: '福州', aqi: 10 },
+    { city: '广州', aqi: 50 },
+    { city: '成都', aqi: 90 },
+    { city: '西安', aqi: 100 }
+  ];
+
+(function () {
+  const aqiList = document.querySelector('#aqi-list');
+  const listFragment = document.createDocumentFragment();
+
+  // Heavily polluted city: aqi > 60
+  const smallestAqiOfHeavilyPollutedCity = 60;
+  const aqiDataOfHeavilyPollutedCity = aqiData.filter(item => item.aqi > smallestAqiOfHeavilyPollutedCity);
+  const sortedAqiDataOfHeavilyPollutedCities = aqiDataOfHeavilyPollutedCity.sort((a, b) => b.aqi - a.aqi);
+
+  sortedAqiDataOfHeavilyPollutedCities.forEach((item, index) => {
+    const liEl = document.createElement('li');
+
+    liEl.innerHTML = `${index + 1}、${item.city} ${item.aqi}`;
+
+    listFragment.appendChild(liEl);
+  })
+
+  aqiList.appendChild(listFragment);
+})();
+
+</script>
+</body>
+</html>
