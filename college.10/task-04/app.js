@@ -66,9 +66,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   dataContainerEl.addEventListener('click', function(e) {
     const target = e.target;
-    const itemToRemove = target.dataset.index;
+    const indexOfItemToRemove = target.dataset.index;
+    const itemtoRemove = target.innerHTML;
+    const removeConfirm = confirm(`确认删除 ${itemtoRemove} 吗`);
 
-    items.splice(itemToRemove, 1);
+    if ( !removeConfirm ) {
+      return;
+    }
+
+    items.splice(indexOfItemToRemove, 1);
 
     renderItems(items, dataContainerEl);
   });
