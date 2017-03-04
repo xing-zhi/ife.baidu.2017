@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   btnContainerEl.addEventListener('click', function(e) {
     const target = e.target;
     const action = target.dataset.action;
-    const newItem = dataInputEl.value;
+    const newItem = parseFloat(dataInputEl.value);
 
     items = actionMap.get(action)(items, newItem);
 
