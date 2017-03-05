@@ -53,15 +53,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderItems(items, dataContainerEl);
 
-    leftOutBtn.disabled = !items.length ? true : false;
-    rightOutBtn.disabled = !items.length ? true : false;
+    leftOutBtn.disabled = items.length === 0;
+    rightOutBtn.disabled = items.length === 0;
   });
 
   dataInputEl.addEventListener('input', function() {
     const value = this.value;
 
-    leftInBtn.disabled = !value ? true : false;
-    rightInBtn.disabled = !value ? true : false;
+    leftInBtn.disabled = !value;
+    rightInBtn.disabled = !value;
   });
 
   dataContainerEl.addEventListener('click', function(e) {
