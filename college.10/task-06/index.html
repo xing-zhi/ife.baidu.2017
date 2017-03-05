@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>IFE JavaScript Task 06</title>
+    <link href="style.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <textarea id="data-input" placeholder="请输入要添加的内容，不同项可以使用回车、逗号（全半角均可）、顿号、空白字符进行分隔，多个连续的分隔符号会被当作一个" cols="80" rows="10"></textarea>
+    <div id="btn-container">
+      <button class="btn" data-action="left-out">左侧出</button>
+      <button class="btn" data-action="left-in">左侧入</button>
+      <button class="btn" data-action="right-out">右侧出</button>
+      <button class="btn" data-action="right-in">右侧入</button>
+    </div>
+    <div>
+      <input id="search-input" placeholder="输入关键词，点击右侧按钮进行搜索" />
+      <button id="btn-search">搜索</button>
+    </div>
+    <div id="items">
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
