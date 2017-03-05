@@ -1,0 +1,44 @@
+#data-input {
+    display: inline-block;
+    padding: 2px 5px;
+    width: 218px;
+    margin: 5px 0;
+}
+
+.btns {
+    margin: 5px 0;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.btn[disabled] {
+    cursor: not-allowed;
+}
+
+#items {
+    margin: 5px 0;
+}
+
+.data-item {
+    display: inline-block;
+    padding: 2px 4px;
+    border: 1px solid #ddd;
+    margin-right: 4px;
+    background-color: #eee;
+    cursor: default;
+}
+
+#data-visualisation-container,
+#sort-visualisation-container {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.data-visualisation-item {
+    display: inline-block;
+    width: 10px;
+    margin-right: 5px;
+    background-color: red;
+}
