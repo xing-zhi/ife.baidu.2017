@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>IFE JavaScript Task 07</title>
+    <link href="style.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <section class="section">
+      <h1>二叉树示例数据</h1>
+      <div>
+        <pre id="tree-data"></pre>
+      </div>
+    </section>
+    <section class="section">
+      <h1>二叉树可视化及遍历</h1>
+      <div>
+        遍历方式：
+        <select id="order-selector">
+          <option value="pre">前序</option>
+          <option value="in">中序</option>
+          <option value="post">后序</option>
+        </select>
+        <button id="btn-traverse-tree">遍历二叉树</button>
+      </div>
+
+      <div id="tree-container">
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>
