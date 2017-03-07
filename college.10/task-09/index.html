@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>IFE JavaScript Task 09</title>
+    <link href="style.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <section class="section">
+      <h1>树示例数据</h1>
+      <div>
+        <pre id="tree-data"></pre>
+      </div>
+    </section>
+
+    <section class="section">
+      <h1>树的可视化、遍历及删除/添加节点</h1>
+      <div class="controls">
+        <button id="btn-traverse-tree">遍历树</button>
+        <button id="btn-delete">删除节点</button>
+      </div>
+      <div class="controls">
+        关键词：<input id="search-input" type="text" placeholder="请输入关键词" />
+        <button id="btn-search">搜索</button>
+      </div>
+      <div class="controls">
+        新节点：<input id="node-content" type="text" placeholder="请输入需要插入的节点内容">
+        <button id="btn-add">添加节点</button>
+      </div>
+
+      <div id="tree-container">
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>
