@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+}
+
+wrapper {
+    height: 100%;
+    position: relative;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 200px;
+    background-color: #ccc;
+    overflow: hidden;
+}
+
+.center::before,
+.center::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #fc0;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.center::before {
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+}
+
+.center::after {
+    right: 0;
+    bottom: 0;
+    transform: translate(50%, 50%);
+}
