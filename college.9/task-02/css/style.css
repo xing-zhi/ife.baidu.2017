@@ -1,0 +1,159 @@
+body, h1, ul {
+    margin: 0;
+}
+
+h2 {
+    font-size: 16px;
+    color: #666;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 14px;
+}
+
+body {
+    background-color: #dedede;
+}
+
+header {
+    background-color: #333;
+    height: 60px;
+}
+.site-title {
+    background: url(../imgs/logo.png) no-repeat 40px 10px;
+    text-indent: -1000px;
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+}
+.site-nav {
+    float: right;
+}
+.site-nav li {
+    height: 60px;
+    line-height: 60px;
+    float: left;
+    margin-right: 25px;
+}
+
+.site-nav a {
+    color: white;
+}
+
+.site-nav a.current {
+    color: #aaa;
+}
+
+article, section, aside {
+    margin: 20px;
+    padding: 40px 20px;
+    background-color: white;
+    border: 1px solid #aaa;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+}
+
+.article-info {
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+article p {
+    text-indent: 2em;
+    line-height: 1.8;
+    margin: 0;
+}
+
+figure {
+    margin-left: 0;
+}
+
+article ul {
+    list-style: none;
+    line-height: 1.8;
+}
+
+.images figure {
+    width: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+.images figure figcaption {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.images figure img {
+    width: 100px;
+}
+
+table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+thead {
+    background-color: #333;
+    color: white;
+}
+tfoot {
+    background-color: #ccc;
+    font-weight: bold;
+}
+th, td {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+aside {
+    margin-top: 40px;
+    margin-right: 40px;
+}
+
+aside h1 {
+    font-size: 16px;
+    border-left: 4px solid #ccc;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+}
+
+form label {
+    display: inline-block;
+    width: 375px;
+    margin-right: 15px;
+    text-align: right;
+}
+
+form textarea {
+    vertical-align: top;
+}
+
+form .btn-submit {
+    display: block;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #3355d0;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+}
+
+form .error-info {
+    margin-left: 390px;
+    color: #aaa;
+}
+
+.site-footer {
+    height: 70px;
+    line-height: 70px;
+    background-color: #000;
+    color: white;
+    text-align: center;
+}
