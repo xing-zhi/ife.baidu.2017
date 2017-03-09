@@ -1,0 +1,41 @@
+label {
+    display: inline-block;
+    width: 100px;
+    margin-right: 10px;
+    text-align: right;
+}
+.tips {
+    margin: -12px 0 0 110px;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.tips.error {
+    color: #df0110;
+}
+
+.tips.success {
+    color: #61ba46;
+}
+
+input {
+    padding: 4px 5px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+}
+
+input.error {
+    border-color: #df0110;
+}
+input.success {
+    border-color: #61ba46;
+}
+
+button {
+    background-color: #2f79ba;
+    color: #fff;
+    padding: 2px 5px;
+    border: 2px solid #2a6da4;
+    border-radius: 3px;
+}
