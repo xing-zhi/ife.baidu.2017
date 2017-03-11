@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>IFE 耀耀学院 任务三</title>
+    <link href="css/style.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <form action="">
+      <p id="is-student-control">
+        <label><input name="isStudent" type="radio" value="1" checked />在校生</label>
+        <label><input name="isStudent" type="radio" value="0" />非在校生</label>
+      </p>
+      <p id="school-control">
+        <label>学校</label>
+        <select id="school-city-select" name="schoolCity">
+          <option value="beijing">北京</option>
+          <option value="shanghai">上海</option>
+        </select>
+        <select class="school-select" name="school" data-city="beijing">
+          <option value="pku">北京大学</option>
+          <option value="thu">清华大学</option>
+        </select>
+        <select class="school-select" name="school" data-city="shanghai">
+          <option value="fudan">复旦大学</option>
+          <option value="sjtu">上海交通大学</option>
+        </select>
+      </p>
+      <p id="employment-control">
+        <label>就业单位</label>
+        <input name="employment" type="text" value=""/>
+      </p>
+    </form>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

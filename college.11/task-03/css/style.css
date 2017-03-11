@@ -1,0 +1,10 @@
+#employment-control {
+    display: none;
+}
+
+.school-select {
+    display: none;
+}
+.school-select:nth-of-type(2) {
+    display: inline;
+}
