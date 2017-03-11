@@ -1,3 +1,32 @@
+#is-student-control {
+    padding-left: 110px;
+}
+
+label[for] {
+    display: inline-block;
+    width: 100px;
+    margin-right: 10px;
+    text-align: right;
+}
+
+input[type="text"] {
+    width: 300px;
+    padding: 4px 5px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+}
+
+select {
+    display: inline-block;
+    padding: 4px 5px;
+    margin-right: 10px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+}
+
 #employment-control {
     display: none;
 }
