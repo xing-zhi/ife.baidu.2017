@@ -55,25 +55,33 @@ document.addEventListener('DOMContentLoaded', () => {
     up(actor, n) {
       const posY = actor.posY - 1;
 
-      actor.posY = posY < 1 ? 1 : posY;
+      return Object.assign(actor, {
+        posY: posY < 1 ? 1 : posY
+      });
     },
     down(actor, n) {
       const posY = actor.posY + 1;
 
-      actor.posY = posY > n ? n : posY;
+      return Object.assign(actor, {
+        posY: posY > n ? n : posY
+      });
     },
     left(actor, n) {
       const posX = actor.posX - 1;
 
-      actor.posX = posX < 1 ? 1 : posX;
+      return Object.assign(actor, {
+        posX: posX < 1 ? 1 : posX
+      });
     },
     right(actor, n) {
       const posX = actor.posX + 1;
 
-      actor.posX = posX > n ? n : posX;
+      return Object.assign(actor, {
+        posX: posX > n ? n : posX
+      });
     },
     go(actor, n) {
-      actions[actor.direction](actor, n);
+      return actions[actor.direction](actor, n);
     },
     turnLeft(actor) {
       const newDirections = {
@@ -83,7 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
         right: 'up'
       };
 
-      actor.direction = newDirections[actor.direction];
+      return Object.assign(actor, {
+        direction: newDirections[actor.direction]
+      });
     },
     turnRight(actor) {
       const newDirections = {
@@ -93,7 +103,9 @@ document.addEventListener('DOMContentLoaded', () => {
         left: 'up'
       };
 
-      actor.direction = newDirections[actor.direction];
+      return Object.assign(actor, {
+        direction: newDirections[actor.direction]
+      });
     },
     turnBack(actor) {
       const newDirections = {
@@ -103,14 +115,27 @@ document.addEventListener('DOMContentLoaded', () => {
         right: 'left'
       };
 
-      actor.direction = newDirections[actor.direction];
+      return Object.assign(actor, {
+        direction: newDirections[actor.direction]
+      });
     }
   };
 
+  function translate(actor, actorEl) {
+    const targetCell = $(`td[data-row="${actor.posY}"][data-col="${actor.posX}"]`);
+    const targetPosition = targetCell.getBoundingClientRect();
+
+    actorEl.style.top = `${targetPosition.top}px`;
+    actorEl.style.left = `${targetPosition.left}px`;
+
+  }
+
   function init() {
-    const playgroundEl = $('#playground');
+    const playgroundEl = $('#board');
     const orderInput = $('#order-input');
     const takeActionBtn = $('#btn-take-action');
+    const actorEl = $('.actor');
+    const interval = '1s';
 
     const n  = 10;
     const actor = {
@@ -120,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     renderTable(n, actor, playgroundEl);
+    translate(actor, actorEl);
 
     takeActionBtn.addEventListener('click', function() {
       const order = orderInput.value.trim().toLowerCase().replace(/\s/g, '');
@@ -141,7 +167,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      action(actor, n);
+      const newActor = action(actor, n);
+
+      actor.direction = newActor.direction;
+      actorEl.dataset.direction = newActor.direction;
+      translate(actor, actorEl);
+
       renderTable(n, actor, playgroundEl);
     });
   }

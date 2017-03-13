@@ -1,5 +1,11 @@
+body {
+    margin: 0;
+}
 table {
     border-collapse: collapse;
+}
+#playground {
+    position: relative;
 }
 
 tr, td {
@@ -7,8 +13,9 @@ tr, td {
 }
 
 td {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
+    padding: 0;
 }
 
 tr:first-child td {
@@ -28,7 +35,7 @@ td:first-child {
     border-color: transparent;
     border-right-color: black;
     text-align: right;
-    width: 20px;
+    width: 18px;
     padding-right: 10px;
 }
 
@@ -37,71 +44,38 @@ tr:last-child td:first-child {
     border-bottom-color: transparent;
 }
 
-td.active {
-    position: relative;
+i.actor {
+    display: block;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
 }
-td.active.up::before,
-td.active.up::after,
-td.active.down::before,
-td.active.down::after,
-td.active.left::before,
-td.active.left::after,
-td.active.right::before,
-td.active.right::after {
+i.actor::before,
+i.actor::after {
     content: '';
     display: block;
-    position: absolute;
 }
-td.active.up::before,
-td.active.up::after,
-td.active.down::before,
-td.active.down::after {
-    width: 100%;
-    left: 0;
-}
-
-td.active.left::before,
-td.active.left::after,
-td.active.right::before,
-td.active.right::after {
-    height: 100%;
-    top: 0;
-}
-td.active.up::before,
-td.active.down::before {
+i.actor::before {
     height: 30%;
-    top: 0;
     background-color: #00f;
 }
-td.active.up::after,
-td.active.down::after {
-    top: 30%;
+i.actor::after {
     height: 70%;
     background-color: #f00;
 }
-td.active.down::before {
-    top: 70%;
+
+i.actor[data-direction="down"] {
+    transform: rotate(180deg);
 }
-td.active.down::after {
-    top: 0;
+
+i.actor[data-direction="left"] {
+    transform: rotate(-90deg);
 }
-td.active.left::before,
-td.active.right::before {
-    width: 30%;
-    left: 0;
-    background-color: #00f;
-}
-td.active.left::after,
-td.active.right::after {
-    left: 30%;
-    width: 70%;
-    background-color: #f00;
-}
-td.active.right::before {
-    left: 70%;
-}
-td.active.right::after {
-    left: 0;
+
+i.actor[data-direction="right"] {
+    transform: rotate(90deg);
 }
 
 .operation-container {
