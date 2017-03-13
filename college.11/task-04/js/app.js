@@ -172,8 +172,6 @@ document.addEventListener('DOMContentLoaded', () => {
       actor.direction = newActor.direction;
       actorEl.dataset.direction = newActor.direction;
       translate(actor, actorEl);
-
-      renderTable(n, actor, playgroundEl);
     });
   }
 
