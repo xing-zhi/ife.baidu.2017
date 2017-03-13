@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+}
+table {
+    border-collapse: collapse;
+}
+
+tr, td {
+    border: 1px solid #ccc;
+}
+
+td {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+}
+
+tr:first-child td {
+    border-color: transparent;
+    border-bottom-color: black;
+    text-align: center;
+}
+
+tr:last-child td {
+    border-bottom-color: black;
+}
+td:last-child {
+    border-right-color: black;
+}
+
+td:first-child {
+    border-color: transparent;
+    border-right-color: black;
+    text-align: right;
+    width: 18px;
+    padding-right: 10px;
+}
+
+tr:first-child td:first-child,
+tr:last-child td:first-child {
+    border-bottom-color: transparent;
+}
+
+i.actor {
+    display: block;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+i.actor::before,
+i.actor::after {
+    content: '';
+    display: block;
+}
+i.actor::before {
+    height: 30%;
+    background-color: #00f;
+}
+i.actor::after {
+    height: 70%;
+    background-color: #f00;
+}
+
+i.actor[data-direction="down"] {
+    transform: rotate(180deg);
+}
+
+i.actor[data-direction="left"] {
+    transform: rotate(-90deg);
+}
+
+i.actor[data-direction="right"] {
+    transform: rotate(90deg);
+}
+
+.operation-container {
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+input {
+    display: inline-block;
+    width: 278px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+button {
+    padding: 2px 6px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: transparent;
+    cursor: pointer;
+}
