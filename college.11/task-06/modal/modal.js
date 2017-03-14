@@ -117,6 +117,9 @@
     return {
       show() {
         show(modalContainer);
+      },
+      hide() {
+        hide(modalContainer);
       }
     };
   }
