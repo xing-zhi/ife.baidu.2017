@@ -1,0 +1,35 @@
+table {
+    border-collapse: collapse;
+}
+thead {
+    background-color: #ccc;
+}
+th, td {
+    padding: 4px 20px 4px 10px;
+    text-align: center;
+}
+th {
+    border: 1px solid #fff;
+    position: relative;
+}
+td {
+    border: 1px solid #ccc;
+}
+i.sort-icon {
+    content: '';
+    display: inline-block;
+    border: 6px solid transparent;
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
+}
+th i.sort-icon[data-sort="desc"] {
+    border-top-width: 0;
+    border-bottom-color: #fff;
+    top: 5px;
+}
+th i.sort-icon[data-sort="asc"] {
+    border-bottom-width: 0;
+    border-top-color: #fff;
+    bottom: 5px;
+}
