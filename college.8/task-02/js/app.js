@@ -1,6 +1,6 @@
 function Observer(obj) {
   const data = {};
-  const innerData = {};
+  const innerData = Object.assign({}, obj);
 
   Object.keys(obj).forEach(key => {
     Object.defineProperty(data, key, {
