@@ -40,9 +40,13 @@ page.open("https://www.baidu.com", function(status) {
     $("#su").click();
   }, keyword);
 
-  setTimeout(function() {
+  var timer = setInterval(function() {
     var results = page.evaluate(function() {
       const results = document.querySelectorAll('.c-container');
+
+      if ( !results ) {
+        return null;
+      }
 
       return [].filter.call(results, function(result) {
         return !result.getAttribute('mu');
@@ -62,6 +66,14 @@ page.open("https://www.baidu.com", function(status) {
         return data;
       });
     });
+
+    // check whether the page has rendered by test the results
+    if ( !results ) {
+      return;
+    } else {
+      clearInterval(timer);
+    }
+
     var now = Date.now();
     var result = {
       code: 1,
@@ -73,6 +85,5 @@ page.open("https://www.baidu.com", function(status) {
 
     console.log(JSON.stringify(result));
     phantom.exit();
-  }, 2000);
-
+  }, 20);
 });
