@@ -19,12 +19,16 @@
 .panel-body {
     border: 1px solid #ddd;
     border-top: none;
-    padding: 15px;
-    display: none;
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out, padding 0.2s ease-out;
 }
 
 input:checked + .panel-body {
-    display: block;
+    padding: 15px;
+    max-height: 100px;
+    transition: max-height 0.2s ease-in, padding 0.2s ease-in;
 }
 
 label {
