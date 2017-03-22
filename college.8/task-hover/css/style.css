@@ -1,0 +1,85 @@
+.box {
+    width: 640px;
+    height: 360px;
+    margin: 50px auto;
+    border: 1px solid;
+    position: relative;
+}
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    transition: opacity 2s;
+    opacity: 0;
+}
+.mask .text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 50px;
+}
+.mask .text::before,
+.mask .text::after {
+    content: '';
+    position: absolute;
+    border: 5px solid #fff;
+    transition: all 1s;
+}
+
+.mask .text::before {
+    top: 0;
+    left: 50%;
+    bottom: 0;
+    right: 50%;
+    border-left: none;
+    border-right: none;
+}
+.mask .text::after {
+    top: 50%;
+    left: 0;
+    bottom: 50%;
+    right: 0;
+    border-top: none;
+    border-bottom: none;
+}
+.box:hover .text::before,
+.box:hover .text::after {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: all 1s;
+}
+.mask p {
+    font-size: 40px;
+    transition: transform 0.5s;
+    background-image: -webkit-linear-gradient(left, #f00, rgb(255, 165, 0),  rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 127, 255), rgb(0, 0, 255), rgb(139, 0, 255), #f00, rgb(255, 165, 0),  rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 127, 255), rgb(0, 0, 255), rgb(139, 0, 255), #f00);
+    background-image: linear-gradient(to right, #f00, rgb(255, 165, 0),  rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 127, 255), rgb(0, 0, 255), rgb(139, 0, 255), #f00, rgb(255, 165, 0),  rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 127, 255), rgb(0, 0, 255), rgb(139, 0, 255), #f00);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: flowlight 5s linear infinite;
+}
+.box:hover p {
+    transform: translateY(-10px);
+}
+.box:hover .mask {
+    opacity: 1;
+}
+.box:hover img {
+    filter: blur(1px);
+}
+
+@keyframes flowlight {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -100% 0;
+    }
+}
