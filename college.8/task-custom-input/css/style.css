@@ -1,0 +1,89 @@
+.pseudoElements input[type="radio"] {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+}
+.pseudoElements input[type="radio"]::before,
+.pseudoElements input[type="radio"]:checked::after {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.pseudoElements input[type="radio"]::before {
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    border: 1px solid #d8d8d8;
+}
+
+.pseudoElements input[type="radio"]:checked::before,
+.pseudoElements input[type="checkbox"]:checked::before {
+    border-color: #d73e33;
+}
+.pseudoElements input[type="radio"]:checked::after {
+    width: 6px;
+    height: 6px;
+    background-color: #d73e33;
+    border-color: #d73e33;
+}
+
+.pseudoElements input[type="checkbox"] {
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0;
+}
+.pseudoElements input[type="checkbox"]::before,
+.pseudoElements input[type="checkbox"]:checked::after {
+    content: '';
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.pseudoElements input[type="checkbox"]::before {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #d8d8d8;
+}
+
+.pseudoElements input[type="checkbox"]:checked::after {
+    width: 3px;
+    height: 5px;
+    border: 2px solid #d73e33;
+    border-left: none;
+    border-top: none;
+    transform: rotate(30deg) translate(-75%, -30%);
+}
+
+.bg input[type="radio"] {
+    display: none;
+}
+.bg input[type="radio"] + label {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(../imgs/icons.png) no-repeat -24px -10px;
+}
+.bg input[type="radio"]:checked + label {
+    background-position: -59px -10px;
+}
+.bg input[type="checkbox"] {
+    display: none;
+}
+.bg input[type="checkbox"] + label {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url(../imgs/icons.png) no-repeat -25px -33px;
+}
+.bg input[type="checkbox"]:checked + label {
+    background-position: -60px -32px;
+}
