@@ -40,8 +40,6 @@
     border: 25px solid transparent;
     border-top-color: #ff2887;
     position: absolute;
-    top: center;
-    left: center;
 }
 .loading::after {
     top: 10px;
