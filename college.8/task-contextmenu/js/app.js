@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const x = e.x;
     const y = e.y;
-    const viewPortWidth = document.documentElement.width;
     const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
     const setPositionOfContextmenu = setPosition.bind(null, contextmenu);
